@@ -465,7 +465,13 @@
                     Подпишитесь на рассылку
                 </label>
                 <input type="email" name="email-sub" id="email-sub" placeholder="E-mail">
-                
+                <button type="button">
+                    <span class="sub-text">Подписаться</span>
+                                <svg class="icon-send">
+                                    <use href="./images/sprite.svg#icon-send"></use>
+                                </svg>
+
+                </button>
             </form>
         </div>
     </footer>
@@ -480,39 +486,35 @@
         <p>Оставьте свои данные, мы вам перезвоним</p>
         <form class="form js-speaker-form">
             
-            <label class="form-field" for="name">Имя
+            <div class="form-field">
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" />
                 <svg class="name-icon">
                     <use href="./images/sprite.svg#person-black"></use>
                 </svg>
-                <input class="fields-input" type="text" name="name" id="name" />
-            </label>
-            
+            </div>
             <div class="form-field ">
                 <label for="tel">Телефон</label>
+                <input type="tel" name="tel" id="tel" />
                 <svg class="name-icon">
                     <use href="./images/sprite.svg#phone-black"></use>
                 </svg>
-                <input type="tel" name="tel" id="tel" />
             </div>
             <div class="form-field">
                 <label for="mail">Почта</label>
+                <input type="email" name="mail" id="mail" />
                 <svg class="name-icon">
                     <use href="./images/sprite.svg#email-black"></use>
                 </svg>
-                <input type="email" name="mail" id="mail" />
             </div>
             <div class="form-field divcomment">
-                <label for="comment">Комментарий</label>                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
+                <label for="comment">Комментарий</label>
+                <textarea class="text" name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
             </div>
             <div class="form-field form-agr">
-                <label for="agreement" class="label-agr">
+                <label for="agreement">
                     <input class="checkbox" type="checkbox" name="agreement" id="agreement"/> 
-                    <svg class="check"> <use href="./images/sprite.svg#check"></use> 
-                    </svg>
-                    <svg class="checkin">
-                        <use href="./images/sprite.svg#checkin"></use>
-                    </svg>
-                    Соглашаюсь с рассылкой и принимаю&#160<a href="#"> <span class="terms"> Условия договора</span></a>
+                    <span class="check">Соглашаюсь с рассылкой и принимаю&#160<a href="#">Условия договора</a></span>
                </label>
             </div>
             <button class="button-submit" type="submit">Отправить</button>

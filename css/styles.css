@@ -580,7 +580,10 @@ address {
 }
 .subscribe {
   display: block;
+  width: 570px;
+  height: 86px;
   display: flex;
+  position: relative;
   flex-direction: column;
   margin-left: 93px;
 }
@@ -599,6 +602,7 @@ address {
   color: var(--logo-accent-footer);
 }
 .subscribe input {
+  display: block;
   color: var(--logo-accent-footer);
   padding: 15px 16px;
   width: 358px;
@@ -609,20 +613,40 @@ address {
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  background-color: #2f303a;
+  background-color: var(--header-footer-bg);
 }
-::placeholder .subscribe {
+.subscribe button {
+  display: block;
+  position: absolute;
+  padding: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 50px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 30px;
   display: flex;
   align-items: center;
-  letter-spacing: 0.03em;
-  color: var(--contacts-color-footer);
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--logo-accent-footer);
+  background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
-::placeholder .filter-portfolio {
+.sub-text {
+  margin-left: 29px;
+}
+.icon-send {
+  width: 24px;
+  height: 24px;
+  fill: var(--logo-accent-footer);
+  margin-left: 10px;
+}
+.filter-portfolio {
   display: block;
   display: flex;
   justify-content: center;
@@ -897,6 +921,7 @@ footer .cont-footer {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 textarea {
   resize: none;
   padding: 12px 16px;
@@ -918,7 +943,7 @@ textarea {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: #757575;
+  color: var(--secondary-text-color);
 }
 .form-field {
   display: block;
@@ -935,86 +960,86 @@ textarea {
   cursor: pointer;
 }
 .form-field input {
+  display: block;
   height: 40px;
   padding: 0 0 0 42px;
 }
-.fields-input:focus,
-.fields-input:hover {
-  border: 1px solid var(--accent-color);
+.modal input:focus ~ svg {
+  fill: var(--accent-two-color);
 }
-.fields-input:focus-within ~ svg {
+.modal input:focus + .icon {
   fill: var(--accent-color);
 }
-.checkbox:checked + .check {
-  background-color: var(--accent-color);
-  background-image: url(./images/sprite.svg#checkin);
-  fill: transparent;
+.modal input:focus,
+.modal textarea:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.check::before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 16px;
+  height: 15px;
+}
+.check::before {
+  margin-right: 8px;
+  background-image: url(../images/check.svg);
+  fill: var(--title-text-color);
+
+  transition: fill 250ms var(--timing-function),
+    background-color 250ms var(--timing-function),
+    background-image 250ms var(--timing-function);
+}
+.checkbox:checked + .check::before {
+  background-color: var(--hover-color);
+  background-image: url(../images/checkin.svg);
   border-radius: 2px;
 }
-.check {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  fill: var(--title-text-color);
-  width: 16px;
-  height: 15px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.checkin {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  width: 16px;
-  height: 15px;
-  fill: var(--logo-accent-footer);
-}
-.form-field textarea {
+.text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
 }
-::placeholder .divcomment {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+.text::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 .form-field input[type="checkbox"] {
-  width: 16px;
-  height: 15px;
-  margin: 0 8.4px 0 0;
-  background: var(--primary-text-color);
+  display: none;
+  margin: 0;
+  width: 0;
+  height: 0;
 }
 .form-agr {
   padding: 20px 12px 30px 11px;
 }
 .form-agr label {
-  display: block;
-  position: relative;
   display: flex;
-  width: 425px;
-  height: 24px;
+  align-items: center;
+}
+.check {
+  display: block;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  color: #757575;
-  justify-content: center;
-  align-items: center;
+  color: var(--secondary-text-color);
 }
-.terms {
-  color: var(--accent-color);
+.check a {
   text-decoration: underline;
+  color: var(--accent-color);
+}
+.checkbox {
+  display: block;
 }
 .button-submit {
   width: 200px;
@@ -1050,12 +1075,12 @@ textarea {
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #212121;
+  color: var(--primary-text-color);
   margin: 0;
 }
 .name-icon {
   display: block;
-  color: #000000;
+  color: var(--logo-accent-header);
   position: absolute;
   bottom: 20px;
   left: 12px;
