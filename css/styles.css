@@ -587,7 +587,12 @@ address {
   flex-direction: column;
   margin-left: 93px;
 }
-.subscribe label {
+.subscribe form {
+  display: block;
+  display: flex;
+  flex-direction: row;
+}
+.subscribe p {
   display: block;
   width: 219px;
   height: 16px;
@@ -617,10 +622,8 @@ address {
 }
 .subscribe button {
   display: block;
-  position: absolute;
   padding: 0;
-  right: 0;
-  bottom: 0;
+  margin-left: 12px;
   width: 200px;
   height: 50px;
   font-family: Roboto;
